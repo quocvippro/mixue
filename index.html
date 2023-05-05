@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html>
+    <html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="http://127.0.0.1:5500/testcode/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>MIXUE</title>
+<head>
+    <script src="https://kit.fontawesome.com/e8fa2e31b4.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+            font-size: 18px;
+        }
+        body {
+            margin: 5vh;
+        }
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
+        
+        .sidebar {
+            width: 25%;
+            border: 1px solid #eee;
+            border-radius: 3px;
+            padding: 15px;
+            height: 92vh;
+            box-shadow: 0px 0px 3px gray;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .menu{
+            width: 90%;
+            margin-left: -10%;
+            padding: 15px;
+            height: 500%;
+        }
+        ul li{
+            list-style: none;
+            padding: 16px; 
+        }
+        ul li a{
+            text-decoration: none;
+            color: black;
+            background-color: rgb(223, 210, 210);
+            border-radius: 3px; 
+            font-size:20px; 
+        }
+        .fa-circle {
+            color: orangered;
+        }
+        .searchBar {
+            width: 100%;
+            background-color: #eee;
+            border-radius: 3px;
+            padding: 9px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        input {
+            border: none;
+            outline: none;
+            background: none;
+        }
+        .glass:hover {
+            color: orangered;
+            cursor: pointer;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .fa-brands {
+            font-size: 25px;
+            margin: 0 10px;
+            color: #333;
+            cursor: pointer;
+        }
+        .fa-brands:hover {
+            color: orangered;
+        }
+        .data {
+            width: 73%;
+            border-radius: 3px;
+            height: 92vh;
+            overflow-y: auto;
+        }
+        .top {
+            height: 250px;
+            border-radius: 5px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1px;
+        }
+        .top img {
+            height: 250px;
+            width: 100%;
+            border-radius:1px;
+            padding: 0px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            
+        }
+        .header {
+            height: 50px;
+            border-radius: 3px;
+            background-color: #e89b9b;
+            margin: 1vh 0px;
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .header p {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+        }
+        #root {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+        }
+        .box {
+            margin: 1px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid #333;
+            border-radius: 5px;
+            padding: 8px;
+        }
+        .img-box {
+            width: 100%;
+            height: 176px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .images {
+            max-height: 90%;
+            max-width: 90%;
+            object-fit: cover;
+            object-position: center;
+        }
+        .bottom {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            height: 100px;
+        }
+        h2 {
+            width: 100%;
+            position: relative;
+            border: none;
+            border-radius: 5px;
+            background-color: #acbfa7;
+            padding: 7px 25px;
+            cursor: pointer;
+            color: rgb(36, 3, 3);
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidehead">
+                <div class="dots">
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-solid fa-circle" style="color: #333;"></i>
+                    <i class="fa-solid fa-circle"></i>
+                </div>
+                <hr style="margin: 15px 0; border: 1px solid #eee">
+            </div>
+            <div class="sidebody" style="height: 69vh;">
+                <div class="searchBar">
+                    <input placeholder="Tìm kiếm ?" id="searchBar" name="searchBar" type="text">
+                    <i class="fa-solid fa-magnifying-glass glass" id="btn"></i>
+                </div>
+            </div>
+        <div class="menu" >
+                <ul>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="lienhe.html">Liên Hệ</a></li>
+                    <li><a href="gioithieu.html">Giới Thiệu</a></li>
+                    <li><a href="chinhanh.html">Chi Nhánh</a></li>
+
+                </ul>
+                </div>
+            <div class="sidefoot">
+                <hr style="margin: 15px 0; border: 1px solid #eee">
+                <div class="social-icons">
+                    <a target="_blank" href="https://www.facebook.com/100083941103764">
+                        <i class="fa-brands fa-square-facebook" aria-hidden="true"></i>
+                </a>
+                <a target="_blank" href="https://www.youtube.com/@mixuevietnam8980">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                </div>
+            </div>
+
+        </div>
+        <div class="data">
+            <div class="top">
+             <button onclick="khuyenmai()" ><img src="images/a0.jpg"></button>
+            </div>
+            <div class="header">
+                <p>Cửa Hàng Ngừi Iu của Khánh</p>
+            </div>
+            <div class="body">
+                <div id="root"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const product = [
+            {
+                id: 0,
+                image: 'images/a1.jpg',
+                title: 'Bạn Bích',
+                price: 110,
+            },
+            {
+                id: 1,
+                image: 'images/a2.jpg',
+                title: 'Em Mai',
+                price: 200,
+            },
+            {
+                id: 2,
+                image: 'images/a3.jpg',
+                title: 'Em Thu',
+                price: 230,
+            },
+            {
+                id: 3,
+                image: 'images/kemmx4.jpeg',
+                title: 'Headphones',
+                price: 100,
+            },
+            {
+                id: 4,
+                image: 'images/kemmx5.jpeg',
+                title: 'Audio Microphone',
+                price: 230,
+            },
+            {
+                id: 5,
+                image: 'images/kemmx6.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 6,
+                image: 'images/kemmx7.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 7,
+                image: 'images/kemmx8.jpg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 8,
+                image: 'images/kemmx9.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 9,
+                image: 'images/kemmx10.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 10,
+                image: 'images/kemmx11.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 11,
+                image: 'images/trasua1.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 12,
+                image: 'images/trasua2.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 13,
+                image: 'images/trasua3.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 14,
+                image: 'images/trasua4.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 15,
+                image: 'images/trasua5.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 16,
+                image: 'images/trasua6.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 17,
+                image: 'images/trasua7.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 18,
+                image: 'images/trasua8.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+             {
+                id: 19,
+                image: 'images/trasua9.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 20,
+                image: 'images/trasua10.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 21,
+                image: 'images/trasua11.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 22,
+                image: 'images/trasua12.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 23,
+                image: 'images/trasua13.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 24,
+                image: 'images/trasua14.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 25,
+                image: 'images/trasua15.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 26,
+                image: 'images/trasua16.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 27,
+                image: 'images/trasua17.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 28,
+                image: 'images/trasua18.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+            {
+                id: 29,
+                image: 'images/trasua19.jpeg',
+                title: 'Smart Watch',
+                price: 100,
+            },
+        ]; 
+        function khuyenmai(){
+            Swal.fire({
+  imageUrl: 'images/banner-2.jpg',
+  imageHeight: 350,
+  imageWidth:550,
+  title:'Tưng Bừng Chào Hè',
+  text:'Đến ngày: 30/4/2023',
+  imageAlt: 'A tall image'
+})
+    }  
+        const categories = [...new Set(product.map((item) => { return item }))]
+
+        document.getElementById('searchBar').addEventListener('keyup', (e) => {
+            const searchData = e.target.value.toLowerCase();
+            const filteredData = categories.filter((item) => {
+                return (
+                    item.title.toLowerCase().includes(searchData)
+                )
+            })
+            displayItem(filteredData)
+        });
+
+        const displayItem = (items) => {
+            document.getElementById('root').innerHTML = items.map((item) => {
+                var { image, title, price } = item;
+                return (
+                    `<div class='box'>
+                        <div class='img-box'>
+                            <img class='images' src=${image}></img>
+                        </div> 
+                        <div class='bottom'>
+                            <p>${title}</p>
+                            <h2>$ ${price}.00</h2>
+                        </div>
+                    </div>`
+                )
+            }).join('')
+        };
+        displayItem(categories);
+
+    </script>
+</body>
+
+</html>
